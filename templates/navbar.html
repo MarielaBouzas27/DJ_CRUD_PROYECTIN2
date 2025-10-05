@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #0a023914;" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}" style="color: rgba(163, 245, 0, 1);">MENU</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'persona:lista' %}" style="color: #f0f0f0;">PERSONAS</a>
+        </li> 
+        <li class="nav-item">  
+            <a class="nav-link" href="{% url 'oficina:lista' %}" style="color: #f0f0f0;">OFICINAS</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f0f0f0;">
+            MENU
+          </a>
+          <ul class="dropdown-menu" style="background-color: #2c2c2c;">
+            <li><a class="dropdown-item" href="{% url 'persona:crear' %}" style="color: #c0f500;">Nueva Persona</a></li>
+            <li><a class="dropdown-item" href="{% url 'oficina:crear' %}" style="color: #c0f500;">Nueva Oficina</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'accounts:logout_message' %}" style="color: #f0f0f0;">Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'accounts:login' %}" style="color: #f0f0f0;">Login</a></li>
+            <li><a class="dropdown-item" href="{% url 'accounts:signup' %}" style="color: #f0f0f0;">Signup</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center">
+        {% if user.is_authenticated %}
+          <span class="navbar-text me-3" style="color: #84f40eff;">Hola, {{ user.username }}</span>
+        {% endif %}
+        {% if search_action %}
+          <form class="d-flex me-3" role="search" action="{% url search_action %}">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="q">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <a class="btn btn-outline-light" href="{% url 'accounts:logout_message' %}">Salir</a>
+        {% else %}
+          <a class="btn btn-outline-light me-2" href="{% url 'accounts:login' %}">Ingresar</a>
+          <a class="btn btn-outline-light" href="{% url 'accounts:signup' %}">Registrarse</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>

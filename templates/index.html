@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1>Bienvenida/o</h1>
+    <p class="lead">Accedé rápido a las secciones de MENU</p>
+    
+    <!-- Fila 1 -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-3 mb-2">
+            <a href="{% url 'oficina:lista' %}" class="btn w-100" style="background-color: #0e0450ff; color: white">Oficinas</a>
+        </div>
+        <div class="col-md-3 mb-2">
+            <a href="{% url 'persona:lista' %}" class="btn w-100" style="background-color: #0e0450ff; color: white">Personas</a>
+        </div>
+    </div>
+
+    <!-- Fila 2 -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-3 mb-2">
+            <a href="{% url 'oficina:crear' %}" class="btn w-100" style="background-color: #160584ff; color: white">Crear Oficina</a>
+        </div>
+        <div class="col-md-3 mb-2">
+            <a href="{% url 'persona:crear' %}" class="btn w-100" style="background-color: #160584ff; color: white">Crear Persona</a>
+        </div>
+    </div>
+
+    <!-- Fila 3 -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-3 mb-2">
+            <a href="{% url 'oficina:detalle' 1 %}" class="btn w-100" style="background-color: #0e04f0ff; color: white">Detalle Oficina</a>
+        </div>
+        <div class="col-md-3 mb-2">
+            <a href="{% url 'persona:detalle' 1 %}" class="btn w-100" style="background-color: #0e04f0ff; color: white">Detalle Persona</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
