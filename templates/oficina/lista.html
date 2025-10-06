@@ -11,9 +11,9 @@
                     <h5 class="mb-1">{{ oficina.nombre }}</h5>
                 </div>
                 <div>
-                    <a href="{% url 'oficina:detalle' oficina.pk %}" class="btn btn-outline-primary">Ver</a>
-                    <a href="{% url 'oficina:editar' oficina.pk %}" class="btn btn-outline-primary">Modificar</a>
-                    <a href="{% url 'oficina:eliminar' oficina.pk %}" class="btn btn-outline-primary">Eliminar</a>
+                    <a href="{% url 'oficina:detalle' oficina.pk %}" class="btn w-100" style="background-color: #9a0695ff; color: white">Ver</a>
+                    <a href="{% url 'oficina:editar' oficina.pk %}" class="btn w-100" style="background-color: #b69e72ff; color: white">Modificar</a>
+                    <a href="{% url 'oficina:eliminar' oficina.pk %}" class="btn w-100" style="background-color: #7d0707ff; color: white">Eliminar</a>
                 </div>
             </div>
             {% endfor %}

@@ -6,7 +6,7 @@
     {% if search_query %}
         <p>Resultados para: <strong>{{ search_query }}</strong></p>
     {% endif %}
-   
+
     {% if oficinas %}
         <div class="list-group">
             {% for oficina in oficinas %}
@@ -16,7 +16,7 @@
                     <small>{{ oficina.personas.count }} empleados</small>
                 </div>
                 <div>
-                    <a href="{% url 'oficina:empleados' oficina.pk %}" class="btn btn-sm btn-info me-1">Ver empleados</a>
+                    <a href="{% url 'oficina:empleados' oficina.pk %}" class="btn w-100" style="background-color: #9a0695ff; color: white">Ver empleados</a>
                 </div>
             </div>
             {% endfor %}

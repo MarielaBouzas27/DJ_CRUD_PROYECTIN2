@@ -14,7 +14,7 @@
                     <div>
                         {{ empleado.nombre }} {{ empleado.apellido }}
                     </div>
-                    <a href="{% url 'persona:detalle' empleado.pk %}" class="btn btn-sm btn-primary">Ver detalle</a>
+                    <a href="{% url 'persona:detalle' empleado.pk %}" class="btn w-100" style="background-color: #9a0695ff; color: white">Ver detalle</a>
                 </div>
             {% endfor %}
         </div>
@@ -25,9 +25,9 @@
     {% endif %}
 
     <div class="mt-4">
-        <a href="{% url 'oficina:lista' %}" class="btn btn-primary">←Volver a la lista de oficinas</a>
+        <a href="{% url 'oficina:lista' %}" class="btn w-100" style="background-color: #d709bcff; color: white">←Volver a la lista de oficinas</a>
         {% if empleados %}
-            <a href="{% url 'oficina:empleados' oficina.pk %}" class="btn btn-primary ms-2">
+            <a href="{% url 'oficina:empleados' oficina.pk %}" class="btn w-100" style="background-color: #9a0695ff; color: white">
                 Ver lista completa de empleados
             </a>
         {% endif %}
